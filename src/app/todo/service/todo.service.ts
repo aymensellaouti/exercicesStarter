@@ -1,20 +1,18 @@
-import { inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Todo } from "../model/todo";
-import { UUID_PROVIDER } from "src/app/injection tokens/uuid.injection-token";
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  #todos: Todo[] = [];
-  uuid = inject(UUID_PROVIDER);
+
   /**
    * elle retourne la liste des todos
    *
    * @returns Todo[]
    */
   getTodos(): Todo[] {
-    return this.#todos;
+    return [];
   }
 
   /**
@@ -24,8 +22,7 @@ export class TodoService {
    *
    */
   addTodo(todo: Todo): void {
-    todo.id = this.uuid();
-    this.#todos.push(todo);
+
   }
 
   /**
@@ -35,11 +32,6 @@ export class TodoService {
    * @returns boolean
    */
   deleteTodo(todo: Todo): boolean {
-    const index = this.#todos.indexOf(todo);
-    if (index > -1) {
-      this.#todos.splice(index, 1);
-      return true;
-    }
     return false;
   }
 
@@ -48,6 +40,5 @@ export class TodoService {
    * @returns void
    */
   logTodos() {
-    console.log(this.#todos);
   }
 }

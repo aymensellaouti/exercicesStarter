@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent {
-  defaultColor = 'red';
-  color = this.defaultColor;
-
-
   /**
    * It changes the color state attribute
    *
@@ -17,10 +13,13 @@ export class ColorComponent {
    * @returns void
    */
   changeColor(newColor: string): void {
-    this.color = newColor;
+
   }
 
+  /**
+   * It reset the color
+   */
   reset() {
-    this.color = this.defaultColor;
+
   }
 }

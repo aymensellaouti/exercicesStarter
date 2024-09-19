@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-week-todo',
@@ -7,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./week-todo.component.css'],
 })
 export class WeekTodoComponent {
-  constructor(private toastr: ToastrService) {
-    toastr.info('WeekTodo');
+  constructor() {
+
   }
 }

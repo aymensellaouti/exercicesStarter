@@ -10,10 +10,4 @@ import { CvService } from '../services/cv.service';
 export class CvItemComponent {
   @Input() size = 50;
   @Input({required: true}) cv!: Cv;
-  cvService = inject(CvService);
-  // @Output() selectCv = new EventEmitter<Cv>();
-  onSelectCv() {
-    this.cvService.selectCv(this.cv);
-    // this.selectCv.emit(this.cv);
-  }
 }

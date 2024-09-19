@@ -1,12 +1,7 @@
 
 <ol class="list-group" test-cy="cvsList">
   <li
-    *ngFor="let cv of cvs; trackBy:track; let isOdd = odd"
-    [ngClass]="{
-      'list-group-item-primary': isOdd,
-      'list-group-item-secondary': !isOdd
-    }"
     class="list-group-item">
-    <app-cv-item  [cv]="cv"/>
+    CV
   </li>
 </ol>
