@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">CED - {{ (authService.connectedUser$ | async)?.email }} - V4</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['']">Accueil</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['cv']">Cv</a>
+      <a
+        *ngIf="authService.isLoggedIn$ | async"
+        class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['cv','add']">Add Cv</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['cv','list']">List Cv</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['todo']">Todo</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['signalTodo']">Signal Todo</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['word']">Word</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['color']">Color</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['products']">Products</a>
+      <a class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['rh']">Rh</a>
+      <a
+        *ngIf="authService.isLoggedOut$ | async"
+        class="nav-item nav-link" routerLinkActive="active text-primary" [routerLink]="['login']">Login</a>
+      <a *ngIf="authService.isLoggedIn$ | async" class="nav-item nav-link" (click)="logout()" >Logout</a>
+    </div>
+  </div>
+</nav>
+
