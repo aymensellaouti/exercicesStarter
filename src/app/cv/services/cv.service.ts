@@ -1,8 +1,5 @@
-import {  inject, Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Cv } from '../model/cv.model';
-import { Observable, Subject } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { APP_API } from 'src/app/config/api.config';
 
 
 @Injectable({
