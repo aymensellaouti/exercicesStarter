@@ -23,6 +23,7 @@ import { RotatingCardComponent } from './components/rotating-card/rotating-card.
 import { SecondComponent } from './components/second/second.component';
 import { TwoComponent } from './components/two/two.component';
 import { MiniWordComponent } from './components/mini-word/mini-word.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MiniWordComponent } from './components/mini-word/mini-word.component';
     RotatingCardComponent,
     SecondComponent,
     TwoComponent,
-    MiniWordComponent
+    MiniWordComponent,
+    DetailsCvComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
